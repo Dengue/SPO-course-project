@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Management;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+using SPO_course_project.Logic;
 
 namespace SPO_course_project
 {
@@ -23,6 +13,15 @@ namespace SPO_course_project
         public MainWindow()
         {
             InitializeComponent();
+            GetPropcessInfo processInterface = new GetPropcessInfo();
+            ManagementObjectSearcher proc;
+            proc = processInterface.getProcessList();
+            foreach (ManagementObject instance in proc.Get())
+            {
+                Text.Text += instance["Name"];
+                Text.Text += "\n";
+            }
         }
+     
     }
 }

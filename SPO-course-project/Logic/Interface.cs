@@ -13,7 +13,7 @@ namespace SPO_course_project.Logic
         ManagementObjectSearcher getProcessList();
     }
 
-    class GetPrpcessInfo : IArOperation
+    class GetPropcessInfo : IArOperation
     {
         public virtual ManagementObjectSearcher getProcessList()
         {
