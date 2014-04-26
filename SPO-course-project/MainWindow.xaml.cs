@@ -13,9 +13,9 @@ namespace SPO_course_project
         public MainWindow()
         {
             InitializeComponent();
-            GetPropcessInfo processInterface = new GetPropcessInfo();
+            IArOperation Interface = new ImplementationClass();
             ManagementObjectSearcher proc;
-            proc = processInterface.getProcessList();
+            proc = Interface.getProcessList();
             foreach (ManagementObject instance in proc.Get())
             {
                 Text.Text += instance["Name"];
