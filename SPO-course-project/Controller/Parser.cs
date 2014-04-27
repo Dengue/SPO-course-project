@@ -97,5 +97,17 @@ namespace SPO_course_project.Controller
             }
             OSData.EventHandler(myList);
         }
+
+        public static void soundParser(ManagementObjectSearcher searcher)
+        {
+            SoundAdapters myList = new SoundAdapters();
+
+            foreach (ManagementObject queryObj in searcher.Get())
+            {
+                Sound currentItem = new Sound(queryObj);
+                myList.adptersList.Add(currentItem);
+            }
+            SoundData.EventHandler(myList);
+        }
     }
 }

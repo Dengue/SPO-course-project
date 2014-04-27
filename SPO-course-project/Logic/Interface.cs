@@ -16,6 +16,7 @@ namespace SPO_course_project.Logic
         void getGraphicsInfo();
         void getProcessorInfo();
         void getMemoryInfo();
+        void getSoundInfo();
     }
 
     class ImplementationClass : IArOperation
@@ -72,6 +73,12 @@ namespace SPO_course_project.Logic
         {
             ManagementObjectSearcher searcher_Memory = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
             Parser.memoryParser(searcher_Memory);
+        }
+
+        void IArOperation.getSoundInfo()
+        {
+            ManagementObjectSearcher searcher_Graphics = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_SoundDevice");
+            Parser.soundParser(searcher_Graphics);
         }
     }
 

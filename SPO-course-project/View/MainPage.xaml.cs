@@ -36,6 +36,7 @@ namespace SPO_course_project.View
             MemoryData.EventHandler = new MemoryData.MyEvent(toDataGrid);
             CPUData.EventHandler = new CPUData.MyEvent(toDataGrid);
             OSData.EventHandler = new OSData.MyEvent(toDataGrid);
+            SoundData.EventHandler = new SoundData.MyEvent(toDataGrid);
 
             InitializeComponent();
         }
@@ -112,5 +113,16 @@ namespace SPO_course_project.View
         {
             dataGrid1.ItemsSource = myList.osList;
         }
+
+        public void toDataGrid(SoundAdapters myList)
+        {
+            dataGrid1.ItemsSource = myList.adptersList;
+        }
+
+        private void soundButton_Click(object sender, RoutedEventArgs e)
+        {
+            Interface.getSoundInfo();
+        }
     }
+
 }
