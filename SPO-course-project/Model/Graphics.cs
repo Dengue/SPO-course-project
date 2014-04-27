@@ -17,11 +17,10 @@ namespace SPO_course_project.Model
 
         public Adapter(ManagementObject queryObj)
         {
-                this.AdapterRAM = queryObj["AdapterRAM"].ToString();
+                this.AdapterRAM = Math.Round(System.Convert.ToDouble(queryObj["AdapterRAM"]) / 1024 / 1024 / 1024).ToString() + " Gb";
                 this.Caption = queryObj["Caption"].ToString();
                 this.Description = queryObj["Description"].ToString();
                 this.VideoProcessor = queryObj["VideoProcessor"].ToString();
-                MessageBox.Show(AdapterRAM);
         }
     }
 

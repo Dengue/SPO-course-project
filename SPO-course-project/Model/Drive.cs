@@ -21,12 +21,12 @@ namespace SPO_course_project.Model
         {
             if (queryObj["Capacity"] != null)
             {
-                this.Capacity = queryObj["Capacity"].ToString();
+                this.Capacity = Math.Round(System.Convert.ToDouble(queryObj["Capacity"]) / 1024 / 1024 / 1024).ToString() + " Gb";
                 this.Caption = queryObj["Caption"].ToString();
                 this.DriveLetter = queryObj["DriveLetter"].ToString();
                 this.DriveType = queryObj["DriveType"].ToString();
                 this.FileSystem = queryObj["FileSystem"].ToString();
-                this.FreeSpace = queryObj["FreeSpace"].ToString();
+                this.FreeSpace = Math.Round(System.Convert.ToDouble(queryObj["FreeSpace"]) / 1024 / 1024 / 1024).ToString() + " Gb";
             }
         }
     }

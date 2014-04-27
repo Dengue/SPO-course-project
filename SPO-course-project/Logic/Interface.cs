@@ -14,8 +14,8 @@ namespace SPO_course_project.Logic
         void getDrivesInfo();
         ManagementObjectSearcher getNetworkInfo();
         void getGraphicsInfo();
-        ManagementObjectSearcher getProcessorInfo();
-        ManagementObjectSearcher getMemoryInfo();
+        void getProcessorInfo();
+        void getMemoryInfo();
     }
 
     class ImplementationClass : IArOperation
@@ -62,16 +62,16 @@ namespace SPO_course_project.Logic
             Parser.graphicsParser(searcher_Graphics);
         }
 
-        ManagementObjectSearcher IArOperation.getProcessorInfo()
+        void IArOperation.getProcessorInfo()
         {
             ManagementObjectSearcher searcher_Processor = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
-            return searcher_Processor;
+            Parser.cpuParser(searcher_Processor);
         }
 
-        ManagementObjectSearcher IArOperation.getMemoryInfo()
+        void IArOperation.getMemoryInfo()
         {
             ManagementObjectSearcher searcher_Memory = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory");
-            return searcher_Memory;
+            Parser.memoryParser(searcher_Memory);
         }
     }
 

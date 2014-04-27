@@ -18,6 +18,8 @@ namespace SPO_course_project
             SoftData.EventHandler = new SoftData.MyEvent(toDataGrid);
             DrivesData.EventHandler = new DrivesData.MyEvent(toDataGrid);
             GraphicData.EventHandler = new GraphicData.MyEvent(toDataGrid);
+            MemoryData.EventHandler = new MemoryData.MyEvent(toDataGrid);
+            CPUData.EventHandler = new CPUData.MyEvent(toDataGrid);
 
             InitializeComponent();
 
@@ -26,7 +28,9 @@ namespace SPO_course_project
             //Interface.getProcessList();
             //Interface.getSoftInfo();
             //Interface.getDrivesInfo();
-            Interface.getGraphicsInfo();
+            //Interface.getGraphicsInfo();
+            //Interface.getMemoryInfo();
+            Interface.getProcessorInfo();
 
         }
 
@@ -49,6 +53,16 @@ namespace SPO_course_project
         public void toDataGrid(GraphicAdapters myList)
         {
             dataGrid1.ItemsSource = myList.adptersList;
+        }
+
+        public void toDataGrid(MemoryBanks myList)
+        {
+            dataGrid1.ItemsSource = myList.banksList;
+        }
+
+        public void toDataGrid(CPUList myList)
+        {
+            dataGrid1.ItemsSource = myList.cpuList;
         }
     }
 }

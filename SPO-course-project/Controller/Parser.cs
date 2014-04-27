@@ -61,5 +61,29 @@ namespace SPO_course_project.Controller
             }
             GraphicData.EventHandler(myList);
         }
+
+        public static void memoryParser(ManagementObjectSearcher searcher)
+        {
+            MemoryBanks myList = new MemoryBanks();
+
+            foreach (ManagementObject queryObj in searcher.Get())
+            {
+                Memory currentItem = new Memory(queryObj);
+                myList.banksList.Add(currentItem);
+            }
+            MemoryData.EventHandler(myList);
+        }
+
+        public static void cpuParser(ManagementObjectSearcher searcher)
+        {
+            CPUList myList = new CPUList();
+
+            foreach (ManagementObject queryObj in searcher.Get())
+            {
+                CPU currentItem = new CPU(queryObj);
+                myList.cpuList.Add(currentItem);
+            }
+            CPUData.EventHandler(myList);
+        }
     }
 }

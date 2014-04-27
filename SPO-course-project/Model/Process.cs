@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Management;
+using System.Windows;
 
 namespace SPO_course_project.Model
 {
     public class Process
     {
         public string ProcessName { get; set; }
+
 
         public Process(ManagementObject queryObj)
         {
