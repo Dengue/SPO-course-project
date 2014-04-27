@@ -85,5 +85,17 @@ namespace SPO_course_project.Controller
             }
             CPUData.EventHandler(myList);
         }
+
+        public static void osParser(ManagementObjectSearcher searcher)
+        {
+            OSList myList = new OSList();
+
+            foreach (ManagementObject queryObj in searcher.Get())
+            {
+                OS currentItem = new OS(queryObj);
+                myList.osList.Add(currentItem);
+            }
+            OSData.EventHandler(myList);
+        }
     }
 }

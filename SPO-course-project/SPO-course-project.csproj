@@ -58,8 +58,13 @@
     <Compile Include="Model\Drive.cs" />
     <Compile Include="Model\Graphics.cs" />
     <Compile Include="Model\Memory.cs" />
+    <Compile Include="Model\OS.cs" />
     <Compile Include="Model\Soft.cs" />
     <Compile Include="Styles\CustomizedWindow\VS2012WindowStyle.cs" />
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NavigationController.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,6 +82,10 @@
     <Page Include="Styles\CustomizedWindow\VS2012WindowStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

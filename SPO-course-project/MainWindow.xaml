@@ -1,16 +1,8 @@
-﻿<Window 
+﻿<NavigationWindow 
         x:Class="SPO_course_project.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="SPO_course_project" Height="800" Width="1024"
         Icon="/Images/icon.png"
-        Style="{StaticResource VS2012WindowStyle}">
-
-    <DataGrid x:Name="dataGrid1" ScrollViewer.VerticalScrollBarVisibility="Hidden" Width="494" Grid.RowSpan="4" GridLinesVisibility="None" BorderThickness="0" Margin="0,154,0,0" RenderTransformOrigin="0.512,0.511" Height="409" VerticalAlignment="Top" >
-        <DataGrid.Effect>
-            <DropShadowEffect/>
-        </DataGrid.Effect>
-
-    </DataGrid>
-
-</Window>
+        Style="{StaticResource VS2012WindowStyle}"> 
+</NavigationWindow>

@@ -10,7 +10,7 @@ namespace SPO_course_project.Logic
         void getProcessList();
         void getSoftInfo();
         ManagementObjectSearcher getServiceInfo();
-        ManagementObjectSearcher getOSInfo();
+        void getOSInfo();
         void getDrivesInfo();
         ManagementObjectSearcher getNetworkInfo();
         void getGraphicsInfo();
@@ -38,10 +38,10 @@ namespace SPO_course_project.Logic
             return searcher_service;
         }
 
-        ManagementObjectSearcher IArOperation.getOSInfo()
+        void IArOperation.getOSInfo()
         {
             ManagementObjectSearcher searcher_OS = new ManagementObjectSearcher("root\\CIMV2","SELECT * FROM Win32_OperatingSystem");
-            return searcher_OS;
+            Parser.osParser(searcher_OS);
         }
 
         void IArOperation.getDrivesInfo()
