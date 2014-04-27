@@ -1,12 +1,14 @@
 ﻿using System.Management;
 using System.Windows;
 
+using SPO_course_project.Controller;
+
 namespace SPO_course_project.Logic
 {
     interface IArOperation
     {
-        ManagementObjectSearcher getProcessList();
-        ManagementObjectSearcher getSoftInfo();
+        void getProcessList();
+        void getSoftInfo();
         ManagementObjectSearcher getServiceInfo();
         ManagementObjectSearcher getOSInfo();
         ManagementObjectSearcher getDrivesInfo();
@@ -18,10 +20,10 @@ namespace SPO_course_project.Logic
 
     class ImplementationClass : IArOperation
     {
-        ManagementObjectSearcher IArOperation.getProcessList()
+        void IArOperation.getProcessList()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2","Select Name, CommandLine From Win32_Process");     
-            return searcher;
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2","Select Name, CommandLine From Win32_Process");
+            Parser.processParser(searcher);
         }       
 
         ManagementObjectSearcher IArOperation.getSoftInfo()

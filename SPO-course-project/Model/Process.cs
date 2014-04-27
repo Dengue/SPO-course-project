@@ -8,21 +8,28 @@ namespace SPO_course_project.Model
 {
     public class Process
     {
-        public string name { get; set; }
+        public string ProcessName { get; set; }
+
         public Process(string name)
         {
-            this.name = name;
+            this.ProcessName = name;
         }
     }
 
     public class Processes
     {
-        public List<Process> processList { get; set; }
+        public List<Process> processList;
 
         public Processes()
         {
             processList = new List<Process>();
         }
+    }
+
+    public static class Data
+    {
+        public delegate void MyEvent(Processes myList);
+        public static MyEvent EventHandler;
     }
 
 

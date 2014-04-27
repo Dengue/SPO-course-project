@@ -14,12 +14,18 @@ namespace SPO_course_project
     {
         public MainWindow()
         {
+            Data.EventHandler = new Data.MyEvent(toDataGrid);   
+
             InitializeComponent();
+            Processes myList = new Processes();
             IArOperation Interface = new ImplementationClass();
-            ManagementObjectSearcher proc;
-            proc = Interface.getProcessList();
-            Processes myList = Parser.processParser(proc);          
+            Interface.getProcessList();
         }
-     
+
+
+        public void toDataGrid(Processes myList)
+        {            
+            dataGrid1.ItemsSource = myList.processList;
+        }
     }
 }

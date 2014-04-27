@@ -12,17 +12,16 @@ namespace SPO_course_project.Controller
 {
     public class Parser
     {
-        public static Processes processParser(ManagementObjectSearcher searcher)
+        public static void processParser(ManagementObjectSearcher searcher)
         {
             Processes myList = new Processes();
-            Process currentItem = new Process("empty");
+
             foreach (ManagementObject instance in searcher.Get())
             {
-                currentItem.name = instance["Name"].ToString();
-                myList.processList.Add(currentItem);
-                MessageBox.Show(myList.processList.Last().name);
+                Process currentItem = new Process(instance["Name"].ToString());
+                myList.processList.Add(currentItem);              
             }
-            return myList;
+            Data.EventHandler(myList);
         }
     }
 }
