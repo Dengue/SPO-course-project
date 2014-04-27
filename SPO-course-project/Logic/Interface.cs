@@ -1,4 +1,5 @@
 ﻿using System.Management;
+using System.Windows;
 
 namespace SPO_course_project.Logic
 {
@@ -19,7 +20,7 @@ namespace SPO_course_project.Logic
     {
         ManagementObjectSearcher IArOperation.getProcessList()
         {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2","Select Name, CommandLine From Win32_Process");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2","Select Name, CommandLine From Win32_Process");     
             return searcher;
         }       
 

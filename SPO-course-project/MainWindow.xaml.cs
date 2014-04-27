@@ -2,6 +2,8 @@
 using System.Windows;
 
 using SPO_course_project.Logic;
+using SPO_course_project.Model;
+using SPO_course_project.Controller;
 
 namespace SPO_course_project
 {
@@ -16,11 +18,7 @@ namespace SPO_course_project
             IArOperation Interface = new ImplementationClass();
             ManagementObjectSearcher proc;
             proc = Interface.getProcessList();
-            foreach (ManagementObject instance in proc.Get())
-            {
-                Text.Text += instance["Name"];
-                Text.Text += "\n";
-            }
+            Processes myList = Parser.processParser(proc);          
         }
      
     }
