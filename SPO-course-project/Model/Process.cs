@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Management;
 
 namespace SPO_course_project.Model
 {
@@ -10,9 +11,9 @@ namespace SPO_course_project.Model
     {
         public string ProcessName { get; set; }
 
-        public Process(string name)
+        public Process(ManagementObject queryObj)
         {
-            this.ProcessName = name;
+            this.ProcessName = queryObj["Name"].ToString();
         }
     }
 
@@ -26,7 +27,7 @@ namespace SPO_course_project.Model
         }
     }
 
-    public static class Data
+    public static class ProcessData
     {
         public delegate void MyEvent(Processes myList);
         public static MyEvent EventHandler;

@@ -11,9 +11,9 @@ namespace SPO_course_project.Logic
         void getSoftInfo();
         ManagementObjectSearcher getServiceInfo();
         ManagementObjectSearcher getOSInfo();
-        ManagementObjectSearcher getDrivesInfo();
+        void getDrivesInfo();
         ManagementObjectSearcher getNetworkInfo();
-        ManagementObjectSearcher getGraphicsInfo();
+        void getGraphicsInfo();
         ManagementObjectSearcher getProcessorInfo();
         ManagementObjectSearcher getMemoryInfo();
     }
@@ -26,10 +26,10 @@ namespace SPO_course_project.Logic
             Parser.processParser(searcher);
         }       
 
-        ManagementObjectSearcher IArOperation.getSoftInfo()
+        void IArOperation.getSoftInfo()
         {
             ManagementObjectSearcher searcher_soft = new ManagementObjectSearcher("root\\CIMV2","SELECT * FROM Win32_Product");
-            return searcher_soft;
+            Parser.softParser(searcher_soft);
         }
 
         ManagementObjectSearcher IArOperation.getServiceInfo()
@@ -44,10 +44,10 @@ namespace SPO_course_project.Logic
             return searcher_OS;
         }
 
-        ManagementObjectSearcher IArOperation.getDrivesInfo()
+        void IArOperation.getDrivesInfo()
         {
             ManagementObjectSearcher searcher_Drives = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Volume");
-            return searcher_Drives;
+            Parser.driveParser(searcher_Drives);
         }
 
         ManagementObjectSearcher IArOperation.getNetworkInfo()
@@ -56,10 +56,10 @@ namespace SPO_course_project.Logic
             return searcher_NET;
         }
 
-        ManagementObjectSearcher IArOperation.getGraphicsInfo()
+        void IArOperation.getGraphicsInfo()
         {
             ManagementObjectSearcher searcher_Graphics = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_VideoController");
-            return searcher_Graphics;
+            Parser.graphicsParser(searcher_Graphics);
         }
 
         ManagementObjectSearcher IArOperation.getProcessorInfo()

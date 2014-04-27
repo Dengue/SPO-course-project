@@ -14,18 +14,41 @@ namespace SPO_course_project
     {
         public MainWindow()
         {
-            Data.EventHandler = new Data.MyEvent(toDataGrid);   
+            ProcessData.EventHandler = new ProcessData.MyEvent(toDataGrid);
+            SoftData.EventHandler = new SoftData.MyEvent(toDataGrid);
+            DrivesData.EventHandler = new DrivesData.MyEvent(toDataGrid);
+            GraphicData.EventHandler = new GraphicData.MyEvent(toDataGrid);
 
             InitializeComponent();
+
             Processes myList = new Processes();
             IArOperation Interface = new ImplementationClass();
-            Interface.getProcessList();
+            //Interface.getProcessList();
+            //Interface.getSoftInfo();
+            //Interface.getDrivesInfo();
+            Interface.getGraphicsInfo();
+
         }
 
 
         public void toDataGrid(Processes myList)
         {            
             dataGrid1.ItemsSource = myList.processList;
+        }
+
+        public void toDataGrid(Soft myList)
+        {
+            dataGrid1.ItemsSource = myList.softList;
+        }
+
+        public void toDataGrid(Drives myList)
+        {
+            dataGrid1.ItemsSource = myList.drivesList;
+        }
+
+        public void toDataGrid(GraphicAdapters myList)
+        {
+            dataGrid1.ItemsSource = myList.adptersList;
         }
     }
 }
