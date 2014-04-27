@@ -12,7 +12,6 @@ namespace SPO_course_project.Model
     {
         public string ProcessName { get; set; }
 
-
         public Process(ManagementObject queryObj)
         {
             this.ProcessName = queryObj["Name"].ToString();

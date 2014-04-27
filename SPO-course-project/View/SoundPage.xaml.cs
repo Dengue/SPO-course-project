@@ -21,73 +21,78 @@ using SPO_course_project.View;
 namespace SPO_course_project.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для SoundPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class SoundPage : Page
     {
         IArOperation Interface = new ImplementationClass();
 
-        public MainPage()
-        {         
+        public SoundPage()
+        {
+            SoundData.EventHandler = new SoundData.MyEvent(toDataGrid);
+
             InitializeComponent();
         }
-
 
         private void graphics_click(object sender, RoutedEventArgs e)
         {
             Interface.getGraphicsInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.graphicsPage);  
+            this.NavigationService.Navigate(Singleton.graphicsPage);
         }
 
         private void cpuButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getProcessorInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.cpuPage);  
+            this.NavigationService.Navigate(Singleton.cpuPage);
         }
 
         private void drivesButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getDrivesInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.volumesPage);  
+            this.NavigationService.Navigate(Singleton.volumesPage);
         }
 
         private void memoryButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getMemoryInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.memoryPage);  
+            this.NavigationService.Navigate(Singleton.memoryPage);
         }
 
         private void osButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getOSInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.osPage);  
+            this.NavigationService.Navigate(Singleton.osPage);
         }
 
         private void processesButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getProcessList();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.processesPage);  
+            this.NavigationService.Navigate(Singleton.processesPage);
         }
 
         private void softButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getSoftInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.softPage);  
+            this.NavigationService.Navigate(Singleton.softPage);
         }
 
         private void soundButton_Click(object sender, RoutedEventArgs e)
         {
             Interface.getSoundInfo();
             NavigationController Singleton = NavigationController.GetInstance();
-            this.NavigationService.Navigate(Singleton.soundPage);  
+            this.NavigationService.Navigate(Singleton.soundPage);
+        }
+
+        public void toDataGrid(SoundAdapters myList)
+        {
+            dataGrid1.ItemsSource = myList.adptersList;
         }
     }
-
 }

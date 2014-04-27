@@ -62,10 +62,34 @@
     <Compile Include="Model\Soft.cs" />
     <Compile Include="Model\Sound.cs" />
     <Compile Include="Styles\CustomizedWindow\VS2012WindowStyle.cs" />
+    <Compile Include="View\CPUPage.xaml.cs">
+      <DependentUpon>CPUPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GraphicsPage.xaml.cs">
+      <DependentUpon>GraphicsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MemoryPage.xaml.cs">
+      <DependentUpon>MemoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NavigationController.cs" />
+    <Compile Include="View\OSPage.xaml.cs">
+      <DependentUpon>OSPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProcessesPage.xaml.cs">
+      <DependentUpon>ProcessesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SoftPage.xaml.cs">
+      <DependentUpon>SoftPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SoundPage.xaml.cs">
+      <DependentUpon>SoundPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VolumesPage.xaml.cs">
+      <DependentUpon>VolumesPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,7 +108,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\CPUPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GraphicsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MemoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OSPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProcessesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SoftPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SoundPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VolumesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
