@@ -8,6 +8,20 @@
 	Title="MainPage">
 
     <Grid>
-        
+        <Button x:Name="cpuButton" Content="CPU" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top" Width="75" Click="cpuButton_Click"/>
+        <Button x:Name="drivesButton" Content="Hard Drives" HorizontalAlignment="Left" Margin="54,110,0,0" VerticalAlignment="Top" Width="75" Click="drivesButton_Click"/>
+        <Button x:Name="graphicsButton" Content="Graphics" HorizontalAlignment="Left" Margin="54,70,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5" Click="graphics_click"/>
+        <Button x:Name="memoryButton" Content="Memory" HorizontalAlignment="Left" Margin="54,130,0,0" VerticalAlignment="Top" Width="75" Click="memoryButton_Click"/>
+        <Button x:Name="osButton" Content="Os" HorizontalAlignment="Left" Margin="54,150,0,0" VerticalAlignment="Top" Width="75" Click="osButton_Click"/>
+        <Button x:Name="processesButton" Content="Processes" HorizontalAlignment="Left" Margin="54,170,0,0" VerticalAlignment="Top" Width="75" Click="processesButton_Click"/>
+        <Button x:Name="softButton" Content="Soft" HorizontalAlignment="Left" Margin="54,190,0,0" VerticalAlignment="Top" Width="75" Click="softButton_Click"/>
+
+        <DataGrid x:Name="dataGrid1" ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left" Margin="303,70,0,0" VerticalAlignment="Top" Height="374" Width="556" GridLinesVisibility="None" BorderThickness="0" >
+            <DataGrid.Effect>
+                <DropShadowEffect/>
+            </DataGrid.Effect>
+
+        </DataGrid>
+
     </Grid>
 </Page>
