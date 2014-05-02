@@ -96,7 +96,7 @@ namespace SPO_course_project.View
 
         private void processesButton_Click_1(object sender, RoutedEventArgs e)
         {
-            Interface.getSoundInfo();
+            Interface.getProcessList();
             NavigationController Singleton = NavigationController.GetInstance();
             this.NavigationService.Navigate(Singleton.processesPage);
         }
